@@ -1,0 +1,12 @@
+@keyframes loading {
+  0%{
+    transform: rotate(0)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}
+.ani-loading{
+  animation: loading 2s infinite linear;
+  -webkit-animation: loading 2s infinite linear;
+}

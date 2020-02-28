@@ -1,0 +1,61 @@
+@mixin bg-image($url, $ext: ".png") {
+  background-image: url($url + "@2x" + $ext);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  //@media (min-resolution: 3dppx) {
+  //  background-image: url($url + "@3x" + $ext);
+  //}
+  @media (-webkit-min-device-pixel-ratio: 3),
+  (min-device-pixel-ratio: 3) {
+    background-image: url($url + "@3x" + $ext);
+  }
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin ellipsis-mul($num: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+@mixin clearfix() {
+  &:after{
+    content:'';
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+}
+
+@mixin flex-bettwen($wrap: nowrap){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin extend-click($dirction: before) {
+  position: relative;
+  &:#{$dirction}{
+    content: '';
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+  }
+}

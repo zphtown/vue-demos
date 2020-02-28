@@ -1,0 +1,46 @@
+@import '../../assets/scss/vars';
+@mixin button-variant($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus {
+    background: $background-color;
+    border-color: $border-color;
+    color: $color;
+  }
+
+  &:active {
+    background: $background-color;
+    border-color: $border-color;
+    color: $color;
+    outline: none;
+  }
+
+  &.is-active {
+    background: $background-color;
+    border-color: $border-color;
+    color: $color;
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $--color-white;
+      background-color: $background-color;
+      border-color: $border-color;
+    }
+  }
+
+}
+
+@mixin button-size($padding, $--font-size, $border-radius) {
+  padding: $padding;
+  font-size: $--font-size;
+  &.is-radius{
+    border-radius: $border-radius;
+  }
+}

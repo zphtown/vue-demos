@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import '../../assets/scss/vars.scss';
+@import '../../assets/scss/mixins.scss';
+@import './button_mixins.scss';
+
+@include b(button) {
+  display: inline-block;
+  //width:100%;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--button-default-background-color;
+  border: $--border-base;
+  border-color: $--button-default-border-color;
+  color: $--button-default-font-color;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: all .1s;
+  font-weight: $--button-font-weight;
+  -webkit-user-select: none;
+  font-size: $--font-size-medium2;
+  & ~ & {
+    //margin-right: 10px;
+  }
+  .pre-icon{
+    margin-right: 6px;
+  }
+  .suffix-icon{
+    margin-left: 6px;
+  }
+  .icon-loading{
+    margin-right: 6px;
+    display: inline-block;
+  }
+  @include when(loading) {
+    opacity: $--button-disabled-opacity;
+  }
+  @include when(disabled) {
+    opacity: $--button-disabled-opacity;
+  }
+  @include when(circle) {
+    border-radius: 100%;
+  }
+  @include m(primary) {
+    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+  }
+  @include m(medium) {
+    @include button-size($--button-medium-padding, $--button-medium-font-size, $--button-medium-radius);
+  }
+  @include m(small) {
+    @include button-size($--button-small-padding, $--button-small-font-size, $--button-small-radius);
+  }
+  @include m(mini) {
+    @include button-size($--button-mini-padding, $--button-mini-font-size, $--button-mini-radius);
+  }
+}

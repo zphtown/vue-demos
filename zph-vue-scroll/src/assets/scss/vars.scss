@@ -1,0 +1,63 @@
+// =====================font-size=====================
+$--font-size-mini: 10px;
+$--font-size-mini2: 12px;
+$--font-size-default: 14px;
+$--font-size-medium: 15px;
+$--font-size-medium2: 16px;
+$--font-size-big: 18px;
+$--font-size-big2: 20px;
+
+// =====================color=====================
+$--primary-color: #E8415C;
+$--primary-color-transparent: rgba(225,0,0, .5);
+
+$--color-white: #fff;
+$--color-black0: #000;
+$--color-black: #333;
+$--color-black2: #666;
+$--color-black3: #999999;
+
+$--background-color: #f8f8f8;
+$--background-color2: #f5f5f5;
+$--modal-background-color: rgba(0, 0, 0, .6);
+$--border-color: #dfdfdf !default;
+
+// =====================extra=====================
+$--behind-z-index: 20;
+$--backtop-z-index: $--behind-z-index - 1;
+$--loading-z-index: 1000;
+$--search-z-index: 20;
+$--pull-down-height: 50px;
+
+// =====================tabar=====================
+$--navbar-height:45px;
+$--navbar-color: $--color-black;
+$--navbar-font-size: $--font-size-medium;
+$--navbar-iconfont-font-size: $--font-size-big2;
+$--navbar-z-index: 10;
+
+// =====================button=====================
+$--button-disabled-opacity: 0.7;
+$--button-default-background-color: $--color-white !default;
+$--border-base: 1px solid !default;
+$--button-default-border-color: $--border-color !default;
+$--button-default-font-color: $--color-black !default;
+$--button-font-weight: 400 !default;
+$--button-primary-font-color: $--color-white !default;
+$--button-primary-background-color: $--primary-color !default;
+$--button-primary-border-color: $--primary-color !default;
+$--button-medium-font-size: $--font-size-medium !default;
+$--button-medium-padding: 10px 20px;
+$--button-medium-radius: 10px;
+$--button-small-font-size: $--font-size-default !default;
+$--button-small-padding: 5px 10px;
+$--button-small-radius: 5px;
+$--button-mini-font-size: $--font-size-mini !default;
+$--button-mini-padding: 2px 5px;
+$--button-mini-radius: 3px;
+
+:export {
+  primary: $--primary-color;
+  pullDownHeight: $--pull-down-height
+}
+

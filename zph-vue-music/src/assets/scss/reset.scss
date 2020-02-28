@@ -1,0 +1,59 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:inherit;
+  vertical-align:baseline;
+  background:transparent;
+  box-sizing:border-box;
+}
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary {
+  display:block;
+}
+ul,li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  font-size:100%;
+  vertical-align:baseline;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+input, select,textarea {
+  border: 0;
+  background: none;
+  -webkit-appearance: none;
+  appearance:none;
+  outline: none;
+  box-shadow: none;
+  font-size:inherit;
+}
+a,button,input,textarea{
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+body{
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, "PingFang SC","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  line-height: 1;
+}
+

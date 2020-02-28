@@ -1,0 +1,34 @@
+@import './vars';
+@import './mixins';
+.g-container{
+  position: relative;
+
+}
+.g-header-container{
+  height: $--navbar-height;
+  width:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: $--navbar-z-index;
+}
+.g-view-container{
+  width:100%;
+  height: 100%;
+  padding-bottom: $--navbar-height;
+  overflow: hidden;
+}
+.g-footer-container {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: $--navbar-z-index;
+  box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, 0.6);
+}
+
+.g-content-container{
+  width:100%;
+  height: 100%;
+  padding-top: $--navbar-height;
+}
