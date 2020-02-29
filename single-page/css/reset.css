@@ -1,0 +1,16 @@
+*{
+  padding:0;
+  margin:0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+ul,li{
+  list-style: none;
+}
+body{
+  font-family: 'Helvetica,MicrosoftYaHei';
+  font-size:16px;
+  line-height: 1;
+}

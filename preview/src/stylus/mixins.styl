@@ -1,0 +1,14 @@
+flex-between($direction = row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+}
+flex-center(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+bg-image($img, $ext= 'png') {
+  background: url('./imgs/' + $img + '.' +  $ext);
+  background-size: 100% 100%
+}
