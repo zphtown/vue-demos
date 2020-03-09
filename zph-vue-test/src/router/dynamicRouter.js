@@ -1,78 +1,134 @@
-
-const _import = require(`_import_${process.env.mode}`)
+const _import = require(`./_import_${process.env.NODE_ENV}`)
 export default [
   {
     name: 'lang',
     path: '/lang',
-    component: () => _import('lang')
+    component: _import('lang'),
+    title: '语言',
+    icon: 'el-icon-s-tools'
   },
   {
-    name: 'checkbox',
-    path: '/checkbox',
-    component: () => _import('checkbox')
-  },
-  {
-    name: 'router',
-    path: '/router/:username/post/:id',
-    component: () => _import('router')
-  },
-  // {
-  //   path: '/user-*',
-  //   component: () => _import('router')
-  // },
-  {
-    path: '/user/:id',
-    component: {
-      props: ['id'],
-      template: `<div class="page purple">1211111<router-view></router-view></div>`
-    },
+    name: 'test',
+    component: null,
+    title: 'test',
+    icon: 'el-icon-s-home',
     children: [
       {
-        path: '/',
-        component: {
-          template: `<div>666</div>`
-        }
+        name: 'jsx',
+        path: '/jsx',
+        component: _import('test/jsx'),
+        title: 'jsx'
+      },
+      {
+        name: 'provide',
+        path: '/provide',
+        component: _import('test/provide'),
+        title: 'provide'
       }
     ]
   },
   {
-    name: 'page1',
-    path: '/page1',
-    component: () => _import('page1')
+    name: 'element',
+    component: null,
+    title: 'element',
+    icon: 'el-icon-menu',
+    children: [
+      {
+        name: 'checkbox',
+        path: '/checkbox',
+        component: _import('element/checkbox'),
+        title: 'checkbox'
+      },
+      {
+        name: 'table',
+        path: '/table',
+        component: _import('element/table'),
+        title: 'table'
+      },
+      {
+        name: 'form',
+        path: '/form',
+        component: _import('element/form'),
+        title: 'form'
+      }
+    ]
   },
   {
-    name: 'page2',
-    path: '/page2',
-    component: () => _import('page2')
+    name: 'element2',
+    component: null,
+    title: 'element',
+    icon: 'el-icon-menu',
+    children: [
+      {
+        name: 'checkbox2',
+        path: '/checkbox',
+        component: _import('element/checkbox'),
+        title: 'checkbox'
+      },
+      {
+        name: 'table2',
+        path: '/table',
+        component: _import('element/table'),
+        title: 'table'
+      },
+      {
+        name: 'form2',
+        path: '/form',
+        component: _import('element/form'),
+        title: 'form'
+      }
+    ]
   },
   {
-    name: 'provide',
-    path: '/provide',
-    component: () => _import('provide')
+    name: 'element3',
+    component: null,
+    title: 'element',
+    icon: 'el-icon-menu',
+    children: [
+      {
+        name: 'checkbox3',
+        path: '/checkbox',
+        component: _import('element/checkbox'),
+        title: 'checkbox'
+      },
+      {
+        name: 'table3',
+        path: '/table',
+        component: _import('element/table'),
+        title: 'table'
+      },
+      {
+        name: 'form3',
+        path: '/form',
+        component: _import('element/form'),
+        title: 'form'
+      }
+    ]
   },
   {
-    name: 'inject',
-    path: '/inject',
-    component: () => _import('inject')
-  },
-  {
-    name: 'form',
-    path: '/form',
-    component: () => _import('form')
-  },
-  {
-    name: 'jsx',
-    path: '/jsx',
-    component: () => _import('jsx')
-  },
-  {
-    name: 'KeepAlive',
-    path: '/keep-alive',
-    component: () => _import('keep-alive')
-  },
-  {
-    name: 'table',
-    path: '/table',
-    component: () => _import('table')
+    name: 'element4',
+    component: null,
+    title: 'element',
+    icon: 'el-icon-menu',
+    children: [
+      {
+        name: 'checkbox4',
+        path: '/checkbox',
+        component: _import('element/checkbox'),
+        title: 'checkbox'
+      },
+      {
+        name: 'table4',
+        path: '/table',
+        component: _import('element/table'),
+        title: 'table'
+      },
+      {
+        name: 'form4',
+        path: '/form',
+        component: _import('element/form'),
+        title: 'form'
+      }
+    ]
   }
 ]

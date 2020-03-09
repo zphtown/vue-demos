@@ -1,12 +1,11 @@
 <template>
-  <router-view/>
+  <div>
+    {{test}}
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  inject: ['test']
 }
 </script>
-
-<style>
-</style>

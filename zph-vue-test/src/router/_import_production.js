@@ -1,1 +1,1 @@
-export default (file) => () => import('@/components/' + file)
+export default (file) => () => import('@/views/modules/' + file)

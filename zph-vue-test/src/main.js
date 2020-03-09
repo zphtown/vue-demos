@@ -5,7 +5,8 @@ import App from './App'
 import router from './router'
 import Elementui from 'element-ui'
 import VueI18n from 'vue-i18n'
-// import 'element-ui/lib/theme-chalk/index.css'
+// import VueParticles from 'vue-particles'
+import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import './assets/scss/index.scss'
 import './assets/scss/element-variables.scss'
 import './permission'
@@ -18,6 +19,7 @@ import myEnLocale from './assets/lang/en'
 import myZhLocale from './assets/lang/zh-cn'
 import store from './store'
 
+// Vue.use(VueParticles)
 Mock.mockData()
 Vue.config.productionTip = false
 Vue.use(VueI18n)

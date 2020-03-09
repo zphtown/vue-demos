@@ -1,0 +1,14 @@
+.slide-left-enter /* .fade-leave-active below version 2.1.8 */
+{
+  transform: translate3d(-20%, 0, 0);
+  opacity: 0;
+}
+.slide-left-leave-to{
+  opacity: 0;
+  transform: translate3d(20%, 0, 0);
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all .3s;
+}
