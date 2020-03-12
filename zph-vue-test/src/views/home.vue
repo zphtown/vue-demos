@@ -4,26 +4,31 @@
       <home-menu></home-menu>
     </div>
     <div class="home-right">
-      <div class="home-right-top">
-        <home-top></home-top>
-      </div>
-      <div class="home-main">
-        <router-view></router-view>
-      </div>
+      <scrollbar>
+        <div class="home-right-top">
+          <home-top></home-top>
+        </div>
+        <div class="home-right-main">
+          <router-view></router-view>
+        </div>
+      </scrollbar>
     </div>
   </div>
 </template>
 
 <script>
-import HomeMenu from './components/menu'
-import HomeTop from './components/top'
+import Scrollbar from '@/components/Scrollbar'
+import HomeMenu from './Menu'
+import HomeTop from './Top'
 export default {
   components: {
     HomeMenu,
-    HomeTop
+    HomeTop,
+    Scrollbar
   },
   data() {
-    return {}
+    return {
+    }
   }
 }
 </script>
@@ -31,23 +36,25 @@ export default {
 <style lang="scss" scoped>
   .home{
     display: flex;
+    width:100%;
+    height: 100%;
   }
   .home-menu-container{
-    height: 100vh;
     background: rgb(84, 92, 100);
     transition: .3s ;
-    overflow: auto;
+    height: 100%;
   }
   .home-right{
     display: flex;
     flex-direction: column;
     transition: .3s;
     flex: 1;
+    height: 100%;
   }
   .home-right-top{
   }
-  .home-main{
-    padding: 20px;
-    flex:1;
+  .home-right-main{
+    height: calc(100vh - #{$--home-top-height});
+    background: #f5f5f5;
   }
 </style>

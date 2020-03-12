@@ -15,7 +15,9 @@ module.exports = {
       'named': 'never',
       'asyncArrow': 'always'
     }],
-    'no-trailing-spaces': 0
+    'no-trailing-spaces': 0,
+    'camelcase': 0,
+    'no-useless-escape': 0
   },
   parserOptions: {
     parser: 'babel-eslint'

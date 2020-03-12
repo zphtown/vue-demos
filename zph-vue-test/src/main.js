@@ -10,6 +10,7 @@ import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import './assets/scss/index.scss'
 import './assets/scss/element-variables.scss'
 import './permission'
+import './component'
 import Mock from './mock/index.js'
 
 import enLocale from 'element-ui/lib/locale/lang/en'
