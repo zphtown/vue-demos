@@ -1,5 +1,8 @@
 'use strict'
 const path = require('path')
+const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
+
 
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -38,6 +41,20 @@ module.exports = {
     //   }
     // }
     // }
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtorem({
+            rootValue: 75,
+            propList: ['*'],
+            selectorBlackList:['van']
+          })
+        ]
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

@@ -1,21 +1,3 @@
-<template>
-  <div>
-    <div v-for="(item, prop) in columns">
-      {{ item }} {{ prop }}
-    </div>
-    <el-table :data="data">
-      <el-table-column
-        v-for="(item, prop) in columns"
-        :key="prop"
-        :label="typeof(item) === 'string' ? item : item.label "
-        :prop="prop"
-        :type="typeof(item) === 'string' ? '' : item.type"
-      ></el-table-column>
-    </el-table>
-  </div>
-</template>
-
-<script>
 export default {
   name: 'MyList',
   props: {
@@ -24,11 +6,30 @@ export default {
       default: () => []
     },
     columns: {
-      type: Object,
+      type: Array,
       default: () => {
-        return {}
+        return []
       }
     }
-  }
+  },
+
+  render() {
+    const that = this
+    const element = (
+      <el-table data={this.data}>
+        {
+          this.columns.map(v => {
+            if (v.slot && that.$scopedSlots[v.slot]) {
+              return <el-table-column label={v.label} prop={v.prop} {...{scopeSlots: {default: that.$scopedSlots[v.slot]}}}></el-table-column>
+            } else {
+              return <el-table-column label={v.label} prop={v.prop}></el-table-column>
+            }
+            return <el-table-column label={v.label} prop={v.prop}></el-table-column>
+          })
+        }
+      </el-table>
+    )
+    return element
+  },
+  methods: {}
 }
-</script>

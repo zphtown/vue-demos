@@ -24,6 +24,12 @@ export default [
         path: '/provide',
         component: _import('test/provide'),
         title: 'provide'
+      },
+      {
+        name: 'test',
+        path: '/test',
+        component: _import('test/test'),
+        title: 'test'
       }
     ]
   },
