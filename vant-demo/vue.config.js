@@ -46,12 +46,14 @@ module.exports = {
     loaderOptions: {
       postcss: {
         plugins: [
-          autoprefixer(),
-          pxtorem({
-            rootValue: 75,
-            propList: ['*'],
-            selectorBlackList:['van']
+          autoprefixer({
+            browsers: ['Android >= 4.0', 'iOS >= 8']
           })
+          // pxtorem({
+          //   rootValue: 75,
+          //   propList: ['*'],
+          //   selectorBlackList:['van']
+          // })
         ]
       }
     }

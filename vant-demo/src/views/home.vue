@@ -1,25 +1,29 @@
 <template>
   <div class="menu-list">
-    <van-button
-      v-for="item in menus"
-      :key="item.path"
-      class="menu-item"
-      :to="item.path"
-      size="small"
-      type="primary"
-      icon="location-o"
-      text="你好"
-      replace
-    >
-      {{ item.meta ? item.meta.title : item.name  }}
-    </van-button>
+    <van-cell-group>
+      <van-cell v-for="item in menus" :key="item.path" :title="item.meta ? item.meta.title : item.name" value="内容" />
+    </van-cell-group>
+<!--    <van-button-->
+<!--      v-for="item in menus"-->
+<!--      :key="item.path"-->
+<!--      class="menu-item"-->
+<!--      :to="item.path"-->
+<!--      size="small"-->
+<!--      type="primary"-->
+<!--      icon="location-o"-->
+<!--      text="你好"-->
+<!--      replace-->
+<!--    >-->
+<!--      {{ item.meta ? item.meta.title : item.name  }}-->
+<!--    </van-button>-->
   </div>
 </template>
 
 
 <script>
 import {
-  Button as VanButton
+  Button as VanButton,
+
 } from 'vant'
 export default {
   name: 'Home',
