@@ -2,7 +2,13 @@
   <div id="app">
     <van-button type="primary">hello</van-button>
     <van-cell-group>
-      <van-cell icon="location-o" title="单元格" value="内容" label="do something" is-link />
+      <van-cell
+        icon="location-o"
+        title="单元格"
+        value="内容"
+        label="do something"
+        is-link
+      />
     </van-cell-group>
     <div class="margin">
       <van-icon name="chat-o" badge="9" />
@@ -32,7 +38,7 @@
             src="https://img.yzcdn.cn/vant/cat.jpeg"
             :fit="item"
           />
-          <p>{{item}}</p>
+          <p>{{ item }}</p>
         </van-col>
       </van-row>
     </div>
@@ -74,15 +80,24 @@
       </van-popup>
     </div>
     <!-- 最多显示一行 -->
-    <div class="margin van-ellipsis">这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略</div>
+    <div class="margin van-ellipsis">
+      这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略
+    </div>
 
     <!-- 最多显示两行 -->
-    <div class="margin van-multi-ellipsis--l2">这是一段最多显示两行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略</div>
+    <div class="margin van-multi-ellipsis--l2">
+      这是一段最多显示两行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略
+    </div>
 
     <!-- 最多显示三行 -->
-    <div class="margin van-multi-ellipsis--l3">这是一段最多显示三行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略</div>
+    <div class="margin van-multi-ellipsis--l3">
+      这是一段最多显示三行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略这是一段最多显示一行的文字，多余的内容会被省略
+    </div>
     <div class="margin">
-      <div class="van-hairline--bottom" style="width:100%;height:100px;background:#fff"></div>
+      <div
+        class="van-hairline--bottom"
+        style="width:100%;height:100px;background:#fff"
+      ></div>
     </div>
 
     <div class="margin no-center">
@@ -103,12 +118,22 @@
     </div>
     <div class="margin">
       <van-cell-group>
-        <van-field label="用户名" v-model="value" type="text" placeholder="请输入用户名" />
+        <van-field
+          label="用户名"
+          v-model="value"
+          type="text"
+          placeholder="请输入用户名"
+        />
       </van-cell-group>
     </div>
     <div class="margin">
       <van-cell-group>
-        <van-field label="手机号" v-model="valueNumber" type="number" placeholder="手机号" />
+        <van-field
+          label="手机号"
+          v-model="valueNumber"
+          type="number"
+          placeholder="手机号"
+        />
       </van-cell-group>
     </div>
     <div class="margin">
@@ -142,26 +167,26 @@
 export default {
   data() {
     return {
-      imglist: ['contain', 'cover', 'fill', 'none', 'scale-down'],
+      imglist: ["contain", "cover", "fill", "none", "scale-down"],
       show: false,
       visible: false,
       transitionIndex: 0,
-      transitions: ['top', 'bottom', 'left', 'right'],
-      date: '',
+      transitions: ["top", "bottom", "left", "right"],
+      date: "",
       dateshow: false,
-      value: '',
-      valueNumber: '',
-      username: '',
-      password: ''
-    }
+      value: "",
+      valueNumber: "",
+      username: "",
+      password: ""
+    };
   },
   methods: {
     showPopup() {
       this.show = true;
     },
     chagneIndex(index) {
-      this.visible = true
-      this.transitionIndex = index
+      this.visible = true;
+      this.transitionIndex = index;
     },
     formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -171,28 +196,28 @@ export default {
       this.date = this.formatDate(date);
     },
     onSubmit(values) {
-      console.log('submit', values);
+      console.log("submit", values);
     }
   }
-}
+};
 </script>
 
 <style lang="less">
-  .no-center{
-    text-align: left;
-  }
-  .margin{
-    margin: 20px 0;
-    text-align: center;
-  }
-  .van-demo-slide{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    margin: -50px 0 0 -50px;
-    background-color: #1989fa;
-    border-radius: 3px;
-  }
+.no-center {
+  text-align: left;
+}
+.margin {
+  margin: 20px 0;
+  text-align: center;
+}
+.van-demo-slide {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+  background-color: #1989fa;
+  border-radius: 3px;
+}
 </style>

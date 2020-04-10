@@ -4,7 +4,7 @@ import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-router.beforeEach(async (to, from, next) => {
+router.beforeEach((to, from, next) => {
   if (to.meta && to.meta.noLogin) {
     next()
   } else {
@@ -12,16 +12,13 @@ router.beforeEach(async (to, from, next) => {
     const menus = store.state.menu.menus
     if (token) {
       if (!menus || !menus.length) {
-        try {
-          store.dispatch('menu/getMyMenu').then(_ => {
-            // console.log(store.state.menu.menus)
-            next({ ...to, replace: true })
-            NProgress.done()
-          })
-        } catch (e) {
+        store.dispatch('menu/getMyMenu').then(() => {
+          next({ ...to, replace: true })
+          NProgress.done()
+        }).catch(e => {
           next('/login')
           NProgress.done()
-        }
+        })
       } else {
         next()
       }

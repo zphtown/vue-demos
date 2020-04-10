@@ -20,7 +20,7 @@ export default {
         {
           this.columns.map(v => {
             if (v.slot && that.$scopedSlots[v.slot]) {
-              return <el-table-column label={v.label} prop={v.prop} {...{scopeSlots: {default: that.$scopedSlots[v.slot]}}}></el-table-column>
+              return <el-table-column label={v.label} prop={v.prop} {...{ scopeSlots: { default: that.$scopedSlots[v.slot] } }}></el-table-column>
             } else {
               return <el-table-column label={v.label} prop={v.prop}></el-table-column>
             }

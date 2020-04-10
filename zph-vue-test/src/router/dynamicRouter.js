@@ -26,10 +26,19 @@ export default [
         title: 'provide'
       },
       {
+        name: 'print',
+        path: '/print',
+        component: _import('test/print'),
+        title: 'print'
+      },
+      {
         name: 'test',
-        path: '/test',
+        path: '/test/:id?',
         component: _import('test/test'),
-        title: 'test'
+        title: 'test',
+        props: (route) => ({
+          id: route.query.id
+        })
       }
     ]
   },
@@ -56,6 +65,12 @@ export default [
         path: '/form',
         component: _import('element/form'),
         title: 'form'
+      },
+      {
+        name: 'table2',
+        path: '/table2',
+        component: _import('element/table2'),
+        title: 'table2'
       }
     ]
   }

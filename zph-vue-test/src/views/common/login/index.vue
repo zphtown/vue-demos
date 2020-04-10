@@ -49,7 +49,7 @@ export default {
       this.$store.dispatch('user/login', {
         username: this.username,
         password: this.password
-      }).then(_ => {
+      }).then(() => {
         this.loading = false
         this.$notify({
           title: '提示',

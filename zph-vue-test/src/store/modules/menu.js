@@ -22,7 +22,7 @@ const actions = {
       ])
       console.log('dynamicRouter', dynamicRouter)
       console.log('homeMenu.children', homeMenu.children)
-      resolve()
+      resolve(dynamicRouter)
     })
   }
 }
@@ -33,7 +33,8 @@ function findRoute(dynamicRouter, result) {
       result.push({
         name: v.name,
         path: v.path,
-        component: v.component
+        component: v.component,
+        props: v.props || false
       })
     }
     if (v.children && v.children.length) {

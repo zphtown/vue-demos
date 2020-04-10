@@ -17,14 +17,14 @@ export default {
     // instance 为对应的 SwipeCell 实例
     beforeClose({ position, instance }) {
       switch (position) {
-        case 'left':
-        case 'cell':
-        case 'outside':
+        case "left":
+        case "cell":
+        case "outside":
           instance.close();
           break;
-        case 'right':
+        case "right":
           Dialog.confirm({
-            message: '确定删除吗？'
+            message: "确定删除吗？"
           }).then(() => {
             instance.close();
           });
@@ -32,5 +32,5 @@ export default {
       }
     }
   }
-}
+};
 </script>

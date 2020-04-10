@@ -7,7 +7,7 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     historyApiFallback: true,
-    port: 8080,
+    port: 8088,
     open: false,
     overlay: {
       warnings: false,
