@@ -1,25 +1,29 @@
+<template>
+  <div>
+    <Child v-if="!loading"></Child>
+  </div>
+</template>
+
 <script>
-export default {
-  props: ['id'],
-  created() {
-    console.log(this.$route.params)
-    console.log(this.$props)
+import Child from './child'
+export default{
+  components: {
+    Child
   },
-  render(h) {
-    const lis = Array.apply(null, {length: 10}).map((v, k) => {
-      return `<li>${k}</li>`
-    }).join('')
-    return h('ul', {
-      domProps: {
-        innerHTML: lis
-      }
-    })
+  data() {
+    return {
+      loading: false
+    }
+  },
+  created() {
+    this.loading = true
+    console.log('parent')
+    setTimeout(_ => {
+      this.loading = false
+    }, 10)
+  },
+  mounted() {
+    console.log('parent mounted')
   }
 }
 </script>
-
-<style scoped>
-  .print-container{
-    background:#000;color: #fff;
-  }
-</style>
