@@ -24,7 +24,6 @@ export default {
             } else {
               return <el-table-column label={v.label} prop={v.prop}></el-table-column>
             }
-            return <el-table-column label={v.label} prop={v.prop}></el-table-column>
           })
         }
       </el-table>

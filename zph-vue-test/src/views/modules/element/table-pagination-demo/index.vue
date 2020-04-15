@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ExTable from './table-pagination.js';
+import ExTable from '@/components/table-pagination/table-pagination.js'
 const total = 5
 export default {
   components: { ExTable },
@@ -24,16 +24,16 @@ export default {
     }
   },
   methods: {
-    fetchRemoteData({currentPage, pageSize}, cb) {
+    fetchRemoteData({ currentPage, pageSize }, cb) {
       this.data = []
-      //currentPage：当前页， pageSize: 每页最大条目数， 用于服务端分页
-      //假设http请求数据，结果返回｛data_list: [...], total: ..｝
-      //设置表格数据
-      let page  = (currentPage-1) * pageSize
+      // currentPage：当前页， pageSize: 每页最大条目数， 用于服务端分页
+      // 假设http请求数据，结果返回｛data_list: [...], total: ..｝
+      // 设置表格数据
+      let page = (currentPage - 1) * pageSize
       let size = page + pageSize
-      size = size < total ? size: total
+      size = size < total ? size : total
       setTimeout(_ => {
-        for(let i = page; i < size; i++) {
+        for (let i = page; i < size; i++) {
           this.data.push({
             prop1: '第' + (i + 1) + '个'
           })
@@ -42,14 +42,13 @@ export default {
         this.$refs.table.pageTotal = total
       }, 300)
 
-
-      //设置分页总数
+      // 设置分页总数
       // const pagination = this.$refs.table.pagination;
       // pagination.total = request.total;
-    },
+    }
   },
   mounted() {
-    this.$refs.table.fetchData();
+    this.$refs.table.fetchData()
   }
 }
 </script>

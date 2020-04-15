@@ -6,7 +6,7 @@
 
 <script>
 import Child from './child'
-export default{
+export default {
   components: {
     Child
   },

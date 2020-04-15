@@ -21,8 +21,8 @@
 </style>
 
 <script>
-import MenuItem from './MenuItem'
-import Scrollbar from '@/components/Scrollbar'
+import MenuItem from './home-menu-item'
+import Scrollbar from '@/components/scrollbar'
 import { mapState } from 'vuex'
 export default {
   components: {

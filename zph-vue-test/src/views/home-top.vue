@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TopUser from './TopUser'
+import TopUser from './home-top-user'
 import { mapState, mapMutations } from 'vuex'
 export default {
   components: {

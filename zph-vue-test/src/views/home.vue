@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import Scrollbar from '@/components/Scrollbar'
-import HomeMenu from './Menu'
-import HomeTop from './Top'
+import Scrollbar from '@/components/scrollbar'
+import HomeMenu from './home-menu'
+import HomeTop from './home-top'
 export default {
   components: {
     HomeMenu,

@@ -67,10 +67,22 @@ export default [
         title: 'form'
       },
       {
-        name: 'table2',
-        path: '/table2',
-        component: _import('element/table2'),
-        title: 'table2'
+        name: 'table-pagination-demo',
+        path: '/table-pagination-demo',
+        component: _import('element/table-pagination-demo'),
+        title: 'table-pagination-demo'
+      },
+      {
+        name: 'collapse-transition-demo',
+        path: '/collapse-transition-demo',
+        component: _import('element/collapse-transition-demo'),
+        title: 'collapse-transition-demo'
+      },
+      {
+        name: 'select-pagination-demo',
+        path: '/select-pagination-demo',
+        component: _import('element/select-pagination-demo'),
+        title: 'select-pagination-demo'
       }
     ]
   }
