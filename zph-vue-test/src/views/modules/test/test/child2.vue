@@ -1,16 +1,14 @@
 <template>
-  <h1>
-    child
-  </h1>
+  <h1>content1</h1>
 </template>
 
 <script>
 export default {
   created() {
-    console.log('child')
+    console.log('content1')
   },
   mounted() {
-    console.log('child mounted')
+    console.log('content1 mounted')
   }
 }
 </script>

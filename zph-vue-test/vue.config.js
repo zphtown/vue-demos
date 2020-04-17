@@ -22,6 +22,13 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
+      },
+      '/h5api': {
+        target: `http://192.168.0.3:9500`,
+        changeOrigin: true,
+        pathRewrite: {
+          "'^/h5api'": ''
+        }
       }
     },
     after: require('./mock/mock-server.js')
