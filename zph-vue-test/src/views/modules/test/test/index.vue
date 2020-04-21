@@ -1,49 +1,63 @@
 <template>
   <div>
-    <div class="tab">
-      <span class="tab-item" @click="tabValue = 0">tab1</span>
-      <span class="tab-item" @click="tabValue = 1">tab2</span>
-    </div>
-    <keep-alive>
-      <Child2 v-if="tabValue === 0"></Child2>
-      <div v-else-if="tabValue === 1" class="content2">
-        <h1>
-          content2
-        </h1>
-        <Child></Child>
+    <el-dialog title="dialog upload" :visible.sync="dialogVisible">
+      <div style="width:200px">
+        <el-upload
+                :auto-upload="false"
+                class="upload-demo"
+                :file-list="fileList"
+                drag
+                action="https://jsonplaceholder.typicode.com/posts/"
+                multiple>
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+        </el-upload>
+        <el-button>打印</el-button>
       </div>
-    </keep-alive>
+    </el-dialog>
+    <el-button @click="dialogVisible = true">上传</el-button>
+    <el-button @click="dialogVisible2 = true">上传2</el-button>
+    <el-dialog title="dialog upload2" :visible.sync="dialogVisible2">
+      <UploadFile drag multiple :limit="100" ref="upload" />
+      <div style="margin-top:30px">
+        <el-button @click="print">打印</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <style scoped>
-  .tab{
-    margin-bottom:20px;
-  }
-  .tab-item{
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
+
 </style>
 
 <script>
-import Child from './child'
-import Child2 from './child2'
+import UploadFile from '@/components/upload-file'
 export default {
   components: {
-    Child,
-    Child2
+    UploadFile
   },
   data() {
     return {
-      tabValue: 0
+      fileList: [],
+      dialogVisible: false,
+      dialogVisible2: false
     }
   },
   created() {
 
   },
   mounted() {
+  },
+  watch: {
+    fileList() {
+      console.log(this.fileList)
+    }
+  },
+  methods: {
+    print() {
+      console.log(this.$refs.upload.fileList)
+    }
   }
 }
 </script>

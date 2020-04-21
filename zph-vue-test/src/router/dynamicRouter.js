@@ -32,6 +32,12 @@ export default [
         title: 'print'
       },
       {
+        name: 'keep-alive-tabs',
+        path: '/keep-alive-tabs',
+        component: _import('test/keep-alive-tabs'),
+        title: 'keep-alive-tabs'
+      },
+      {
         name: 'test',
         path: '/test/:id?',
         component: _import('test/test'),
